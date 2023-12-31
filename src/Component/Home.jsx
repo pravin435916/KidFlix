@@ -80,7 +80,7 @@ function Home() {
           {data.map((m) => (
             <div
               key={m.imdbID}
-              className="w-36 h-56 sm:w-72 sm:h-96 p-2 border border-purple-500 rounded-md cursor-pointer transform hover:scale-105 transition-transform overflow-hidden"
+              className="w-32 h-56 sm:w-72 sm:h-96 p-2 border border-purple-500 rounded-md cursor-pointer transform hover:scale-105 transition-transform overflow-hidden"
               onClick={() => handleMovieClick(m)}
             >
               <h1 className="font-bold text-xs sm:text-lg text-purple-800 mb-2">{m.Title}</h1>
