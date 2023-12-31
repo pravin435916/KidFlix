@@ -12,7 +12,8 @@ function Home() {
       setData(['']);
       return;
     }
-    fetch(`http://www.omdbapi.com/?s=${search}&y=${search}&${type ? `type=${type}&` : ''}&apikey=${apiKey}`)
+    // fetch(`http://www.omdbapi.com/?s=${search}&y=${search}&${type ? `type=${type}&` : ''}&apikey=${apiKey}`)
+    fetch(`https://www.omdbapi.com/?s=${search}&y=${search}&${type ? `type=${type}&` : ''}&apikey=${apiKey}`)
       .then((res) => res.json())
       .then((dta) => {
         if (dta.Search) {
