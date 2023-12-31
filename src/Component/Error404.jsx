@@ -1,12 +1,12 @@
 import React from "react";
-import boy from "../assets/boy2.png";
+import boy from "../assets/masha1.png";
 import { Link } from "react-router-dom";
 
 const Error404 = () => {
   return (
     <div className="flex items-center justify-center flex-col sm:flex-row h-screen bg-gradient-to-b from-yellow-200 to-yellow-400 text-gray-800 gap-2 sm:gap-20 ">
       <div className="">
-        <img className="w-60 sm:w-80" src={boy} alt="" />
+        <img className="w-60 sm:w-96" src={boy} alt="" />
       </div>
       <div className="flex flex-col gap-7 items-center">
         <div className="flex flex-col gap-3 items-center">
