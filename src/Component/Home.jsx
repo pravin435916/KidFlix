@@ -9,7 +9,7 @@ function Home() {
 
   useEffect(() => {
     if (search === '') {
-      setData(['']);
+      <h1>Feel Free to search any movie</h1>
       return;
     }
     // fetch(`http://www.omdbapi.com/?s=${search}&y=${search}&${type ? `type=${type}&` : ''}&apikey=${apiKey}`)
@@ -39,16 +39,12 @@ function Home() {
   const handleMovieLink = (movie) => {
     if (movie.Title) {
       const youtubeLink = `https://www.youtube.com/results?search_query=${encodeURIComponent(
-        movie.Title + ' trailer'
+        movie.Title + ' full movie'
       )}`;
 
       window.open(youtubeLink, '_blank');
     } else {
-      // Handle the case when the movie title is undefined
       console.error('Movie title is undefined');
-      // Optionally, you can provide a default search query or handle the situation differently
-      // const youtubeLink = `https://www.youtube.com/results?search_query=default+trailer`;
-      // window.open(youtubeLink, '_blank');
     }
 
     setSelectedMovie(null);
