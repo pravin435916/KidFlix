@@ -36,11 +36,28 @@ function Home() {
   const handleTypeChange = (e) => {
     setType(e.target.value);
   };
+  const handleMovieLink = (movie) => {
+    if (movie.Title) {
+      const youtubeLink = `https://www.youtube.com/results?search_query=${encodeURIComponent(
+        movie.Title + ' trailer'
+      )}`;
+
+      window.open(youtubeLink, '_blank');
+    } else {
+      // Handle the case when the movie title is undefined
+      console.error('Movie title is undefined');
+      // Optionally, you can provide a default search query or handle the situation differently
+      // const youtubeLink = `https://www.youtube.com/results?search_query=default+trailer`;
+      // window.open(youtubeLink, '_blank');
+    }
+
+    setSelectedMovie(null);
+  };
 
   const handleTypeClick = (selectedType) => {
     setType(selectedType);
   };
- 
+
   const filterOptions = ['movie', 'series', 'episode'];
 
   return (
@@ -64,11 +81,10 @@ function Home() {
             {filterOptions.map((filter) => (
               <button
                 key={filter}
-                className={`text-sm font-semibold px-4 py-2 rounded-full ${
-                  type === filter
+                className={`text-sm font-semibold px-4 py-2 rounded-full ${type === filter
                     ? 'bg-pink-500 text-white'
                     : 'bg-purple-200 text-purple-800 hover:bg-purple-300 hover:text-purple-900'
-                }`}
+                  }`}
                 onClick={() => handleTypeClick(filter)}
               >
                 {filter}
@@ -118,6 +134,10 @@ function Home() {
             </div>
             <button
               className="mt-6 bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              onClick={() => handleMovieLink(selectedMovie)}>Watch</button>
+
+            <button
+              className="mt-6 ml-4 bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               onClick={() => setSelectedMovie(null)}
             >
               Close
