@@ -17,7 +17,7 @@ function App() {
         <Route path="/movies" element={<ComingSoon/>}/>
         <Route path="/genres" element={<ComingSoon/>}/>
         <Route path="/signIn" element={<SignIn/>}/>
-        <Route path="*" element={<Error404/>}/>
+        <Route path="/*" element={<Error404/>}/>
       </Routes>
       <Footer/>
     </BrowserRouter>
